@@ -1,12 +1,12 @@
-// TODO: Include packages needed for this application
 
-// TODO: Create an array of questions for user input
-const questions = require("questions");
+const inquirer = require("questions");
 const links = require("links");
 const fs = require("fs");
 
-questions
-.prompt([
+// questions that are being asked
+const prompt = inquirer.createPromptModule()
+
+prompt([
     {
     type: "input",
     message: "What is your Github username?",
@@ -55,6 +55,8 @@ questions
   
 ])
 
+// vars that are made from the "names" in the questions being asked
+.then(function(response) {
 var nameInput = response.username;
 var title = response.title;
 var description = response.description;
@@ -62,13 +64,23 @@ var usage = response.usage;
 var license = response.license;
 var contributions = reponse.contributions;
 var tests = response.tests;
-var badgeLabel =
-var badgeUrl =
+// var badgeLabel =
+// var badgeUrl =
+
+links({
+    method: 'get',
+    url: `https://api.github.com/users/${nameInput}`,
+  })
+    .then(function(response) {
+    var email = response.data.email;
+  
+  
 
 
+  const script = ` ![badge image](${badgeUrl} "Project Badge")
 
 
-
+// sections of a ReadMe
  #${title}
 ***
 ## Description
@@ -95,15 +107,24 @@ ${license}
 ${contributions}
 ***
 ## Tests
-${tests}
-***
+${tests}`
 
-        
+fs.writeFile("README.md", script, function(err) {
+              
+    if (err) {
+        return console.log(err);
+        }
+          
+        console.log('Your README.md is successfully created!');
+          
+    });
+});
+}
+
+);
 
 
 
-
-  
 
 module.exports = generateMarkdown;
 
