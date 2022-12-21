@@ -20,10 +20,7 @@
   you will need to download node,inquirer to make this happen
 ***
   ## Usage
-  free to use to anyone who would like to use it 
-***
-  ## License
-  in case you want to use a licensing 
+  free to use to anyone who would like to use it  
 ***
   ## Contributions
   there are no contributions right now but there could be in the future 
