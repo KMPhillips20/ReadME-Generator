@@ -12,7 +12,7 @@ const generateMarkdown = data => {
   - [Usage](#usage)
   - [License](#license)
   - [Contributions](#contributions)
-  - [Tests](#test)
+  - [Tests](#tests)
 ***
   ## Description
   ${data.description}

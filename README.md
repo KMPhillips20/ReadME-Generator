@@ -1,12 +1,9 @@
-# ballers
-  [![License: licensing](https://img.shields.io/badge/License-licensing-yellow.svg)](https://opensource.org/licenses/licensing) 
+# Readme-Generator
+  [![License: in%20case%20you%20want%20to%20use%20a%20licensing%20](https://img.shields.io/badge/License-in%20case%20you%20want%20to%20use%20a%20licensing%20-yellow.svg)](https://opensource.org/licenses/in%20case%20you%20want%20to%20use%20a%20licensing%20) 
   
 
   ## Username
-  kp
-***
-  #Title
-  ballers
+  KMPhillips20
 ***
   ## Table of Contents
   - [Description](#description)
@@ -14,25 +11,25 @@
   - [Usage](#usage)
   - [License](#license)
   - [Contributions](#contributions)
-  - [Tests](#test)
+  - [Tests](#tests)
 ***
   ## Description
-  description
+  used node.js and other packages to make a ReadMe
 ***
   ## Installation
-  installation
+  you will need to download node,inquirer to make this happen
 ***
   ## Usage
-  usage
+  free to use to anyone who would like to use it 
 ***
   ## License
-  licensing
+  in case you want to use a licensing 
 ***
   ## Contributions
-  contributions
+  there are no contributions right now but there could be in the future 
 ***
   ## Tests
-  tests
+  there are no test at this given time
 ***
   ## BadgeLabel
   MIT
