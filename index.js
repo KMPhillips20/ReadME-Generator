@@ -1,12 +1,11 @@
 
 const inquirer = require("questions");
-const links = require("links");
+const generate = require("./utils/generateMarkdown");
 const fs = require("fs");
 
 // questions that are being asked
-const prompt = inquirer.createPromptModule()
-
-prompt([
+const questions = () => {
+return inquirer.prompt([
     {
     type: "input",
     message: "What is your Github username?",
@@ -48,85 +47,42 @@ prompt([
     name: "tests"
   },
   {
-    type: "input",
+    type: "list",
     message: "What badge label would you like to use for your project?",
-    name: "badgeLabel"
+    name: "badgeLabel",
+    choices: ['MIT', 'ISC', 'Mozilla Public License 2.0']
+
   },
   
 ])
 
-// vars that are made from the "names" in the questions being asked
-.then(function(response) {
-let nameInput = response.username;
-let title = response.title;
-let description = response.description;
-let usage = response.usage;
-let license = response.license;
-let contributions = reponse.contributions;
-let tests = response.tests;
-// let badgeLabel =
-// let badgeUrl =
+};
 
-links({
-    method: 'get',
-    url: `https://api.github.com/users/${nameInput}`,
-  })
-    .then(function(response) {
-    var email = response.data.email;
-  
+
   
 
-
-  const script = ` ![badge image](${badgeUrl} "Project Badge")
-
-
-// sections of a ReadMe
- #${title}
-***
-## Description
-${description}
-***
-## Table of Contents
-- Installation
-- Usage
-- Licensing Info
-- Contributions
-- Tests
-- Creator Info
-***
-## Installation Requirements
-${install}
-***
-## Usage
-${usage}
-***
-## Licensing Info
-${license}
-***
-## Contributions
-${contributions}
-***
-## Tests
-${tests}`
-
-fs.writeFile("README.md", script, function(err) {
+const writeFile = data => {
+fs.writeFile("README.md", data, err => {
               
     if (err) {
-        return console.log(err);
+        console.log(err);
+        } else {
+          console.log('You Made A ReadMe!');
         }
-          
-        console.log('Your README.md is successfully created!');
-          
-    });
+              
+    })
+};
+
+questions()
+.then(answers => {
+  return generate(answers);
+})
+.then(data =>{
+  return writeFile(data);
 });
-}
-
-);
+;
 
 
-
-
-module.exports = generateMarkdown;
 
 
 
