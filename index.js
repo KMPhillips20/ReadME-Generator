@@ -1,5 +1,5 @@
 
-const inquirer = require("questions");
+const inquirer = require("inquirer");
 const generate = require("./utils/generateMarkdown");
 const fs = require("fs");
 
@@ -62,10 +62,10 @@ return inquirer.prompt([
   
 
 const writeFile = data => {
-fs.writeFile("README.md", data, err => {
+    fs.writeFile('README.md', data, err => {
               
-    if (err) {
-        console.log(err);
+        if (err) {
+          console.log(err);
         } else {
           console.log('You Made A ReadMe!');
         }
@@ -80,7 +80,7 @@ questions()
 .then(data =>{
   return writeFile(data);
 });
-;
+
 
 
 
