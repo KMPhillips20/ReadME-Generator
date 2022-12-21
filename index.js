@@ -63,7 +63,6 @@ return inquirer.prompt([
 
 const writeFile = data => {
     fs.writeFile('README.md', data, err => {
-              
         if (err) {
           console.log(err);
         } else {
@@ -88,4 +87,3 @@ questions()
 
 
 
-// [![License: ${encodeURIComponent(data.license)}](https://img.shields.io/badge/License-${encodeURIComponent(data.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(data.license)})
