@@ -33,11 +33,6 @@ return inquirer.prompt([
   },
   {
     type: "input",
-    message: "Explain licensing of your project:",
-    name: "license"
-  },
-  {
-    type: "input",
     message: "What contributions will be considered for this project?",
     name: "contributions"
   },
