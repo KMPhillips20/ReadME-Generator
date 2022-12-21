@@ -57,15 +57,15 @@ prompt([
 
 // vars that are made from the "names" in the questions being asked
 .then(function(response) {
-var nameInput = response.username;
-var title = response.title;
-var description = response.description;
-var usage = response.usage;
-var license = response.license;
-var contributions = reponse.contributions;
-var tests = response.tests;
-// var badgeLabel =
-// var badgeUrl =
+let nameInput = response.username;
+let title = response.title;
+let description = response.description;
+let usage = response.usage;
+let license = response.license;
+let contributions = reponse.contributions;
+let tests = response.tests;
+// let badgeLabel =
+// let badgeUrl =
 
 links({
     method: 'get',
